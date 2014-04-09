@@ -96,6 +96,6 @@ of finally completing our project, and that is why I think I deserve the final 2
 BONUS POINTS FOR GROUP PARTNERS(up to 3 each):
 	Owen = 3 points (Spent many hours making sprite sheet for Charles Barkley and is close to having other
 			 ones developed as well)
-	Mitch = 2 points (Made Main Menu screen and ability to choose characters and maps. This mode just has not
+	Mitch = 3 points (Made Main Menu screen and ability to choose characters and maps. This mode just has not
 			  been incorporated into this gameplay portion of the program yet.)
 
