@@ -1,0 +1,101 @@
+/*
+Kevin Epp  CSE 20212
+Lab 10  report.txt
+Report for Lab 10
+*/
+
+Personal GitHub: github.com/kepp14
+Group Project GitHub: github.com/ozidar/MortalKombat
+
+***
+Compile by typing make and run by typing main
+***
+
+GAMEPLAY:
+Choose 1, 2, or 3 to choose which map to play on
+For Player 1 (left character):
+	a = go left
+	s = go right
+	q = punch
+	w = kick
+	e = block
+For Player 2 (right character):
+	j = go left
+	k = go right
+	u = punch
+	i = kick
+	o = block
+Characters must be within 100 pixels of each other to punch kick 
+Each character starts with 100 health. Punches take away 3 health and kicks take away 5 health.
+Keep attacking until one player's health is depleted!!
+BUG FIX FROM LAB 9: Players can no longer do two actions at once (e.g. block and punch)
+
+===========================================================================================================================
+
+PART 1:
+TIME LOG (60 points):
+	2 hours: Meeting w/ group to see progress on different parts/discuss future plans
+	3 hours: Getting gameplay portion of blob.h to work and working out bugs
+	2 hours: Figuring out how to get users to only be able to press one key at a time
+	3 hours: Getting main.cpp to work and have the images do what they were supposed
+		 to do (deleting background color of sprite images took awhile)
+	2 hours: Cutting sprite sheets and animating character's movements
+
+	TOTAL: 12 hours
+
+PART 2:
+Validation of Code (20 points):
+	I validated that users can do only one action at a time, which I spent a long time 
+	figuring out, by playing many rounds of the game and trying out all of the different
+	button combinations and making sure that what I expected to happen actually happened.
+	This took awhile because I ran into several bugs, such as one that didn't register 
+	when a key was released, so the character would go on doing their first action for eternity.
+	I finally figured all of this out by using the variables pressed1, pressed2, pressed3, pressed4,
+	and pressed5, and now the program works as it should.
+
+	I used a simple collision detection so that the characters couldn't go through one another.
+	It simply uses a reference to the other character's object and checks its location in relation
+	to the other character. If one character is within 80 pixels of the other character's location,
+	then the program will not allow that character to move in the direction of the other character any 
+	further.
+
+PART 3:
+Brag for 20 points:
+
+I think I deserve the final 20 points for this lab for the following reasons:
+
+The program blob.h works internally by utilizing many SDL functions. The function
+load_image takes in a images location and optimizes it and returns a pointer to that
+image. The function apply_image takes in a pointer to an image and puts it onto the
+screen. The function init initializes the SDL screen and sets it up. The class Blob 
+keeps track of the position of the Blob and uploads the image to the screen using various
+functions. The main function starts by initializing the screen and creating an instance
+of the Blob class. It then loads the background image for the screen and enters a while 
+loop until the user quits. Main.cpp simply instantiates two instances of the Blob class 
+and goes through a while loop that checks if the user presses a key and if the user presses
+an appropriate key (depending on whether it is player 1 or 2), it will move the dot on the 
+screen accordingly or make an attack attempt at the other player. If the user presses the key
+to punch, kick, block, or move, the functions input1 and input2 (depending on which character 
+did the action) will take care of it and do the appropriate action. When it quits, the program
+frees the images in memory so there isn't a memory leak.
+
+This program helped move the project forward because we now have essentially a working game. If
+need be, our video game could be finished at this stage with full functionality for the players.
+However, we still obviously have work we want to get done. We want to still get a main menu screen 
+to choose characters and maps rather than at the command line, and for that we still need to finish
+sprite sheets for every character other than Charles Barkley. This will likely include making separate
+inherited classes for each of the characters as well as a vector to keep track of user's character choices.
+However, this program can serve as a good skeleton for the rest of the project and is essentially the 
+finished product in terms of the actual gameplay part of the game.
+
+This is cool because we worked together to make a functioning video game! Although the choices are limited
+and gameplay may not be exactly where we want it to be, this could be used as a finished product for a video
+game, and we can physically sit down and play this game with each other! This lab has moved us to the brink
+of finally completing our project, and that is why I think I deserve the final 20 points.
+
+BONUS POINTS FOR GROUP PARTNERS(up to 3 each):
+	Owen = 3 points (Spent many hours making sprite sheet for Charles Barkley and is close to having other
+			 ones developed as well)
+	Mitch = 2 points (Made Main Menu screen and ability to choose characters and maps. This mode just has not
+			  been incorporated into this gameplay portion of the program yet.)
+
